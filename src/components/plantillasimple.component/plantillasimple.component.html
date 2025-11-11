@@ -1,0 +1,39 @@
+<div>
+    <h1>Plantillas</h1>
+    <form #plantillaform="ngForm">
+        <select name="id" #id>
+            @for(plantilla of plantillas; track plantilla)
+            {
+                <option>{{plantilla.idEmpleado}}</option>
+            }
+        </select>
+        <button (click)="sacarPlantilla()">Detalles</button>
+    </form>
+    @if(plantilla != null)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Id Empleado</th>
+                    <th>Id Hospital</th>
+                    <th>IdSala</th>
+                    <th>Apellido</th>
+                    <th>Funcion</th>
+                    <th>Turno</th>
+                    <th>Salario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{plantilla.idEmpleado}}</td>
+                    <td>{{plantilla.idHospital}}</td>
+                    <td>{{plantilla.idSala}}</td>
+                    <td>{{plantilla.apellido}}</td>
+                    <td>{{plantilla.funcion}}</td>
+                    <td>{{plantilla.turno}}</td>
+                    <td>{{plantilla.salario}}</td>
+                </tr>
+            </tbody>
+    </table>
+    }
+</div>

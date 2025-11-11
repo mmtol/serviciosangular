@@ -7,8 +7,7 @@ import { Persona } from '../../models/Persona';
   selector: 'app-personasapi',
   standalone: false,
   templateUrl: './personasapi.html',
-  styleUrl: './personasapi.css',
-  providers: [ServicePersonas]
+  styleUrl: './personasapi.css'
 })
 export class Personasapi implements OnInit
 {
