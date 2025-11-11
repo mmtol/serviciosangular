@@ -33,6 +33,9 @@ export class PlantillasimpleComponent implements OnInit
   sacarPlantilla()
   {
     let aux = this.id.nativeElement.value;
-
+    this._service.getPlantilla(aux).then(response =>
+    {
+      this.plantilla = response;
+    })
   }
 }
