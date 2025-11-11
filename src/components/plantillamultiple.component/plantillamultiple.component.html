@@ -1,0 +1,43 @@
+<div>
+    <h1>Plantillas</h1>
+    <form #plantillaform="ngForm">
+        <select class="form-control" name="funciones" #funciones multiple>
+            @for(op of listaSelect; track op)
+            {
+                <option>{{op}}</option>
+            }
+        </select>
+        <button (click)="sacarPlantilla()">Plantilla</button>
+    </form>
+    <hr/>
+    @if(plantilla != null)
+    {
+        <table class="table table bordered">
+            <thead>
+                <tr>
+                    <th>Id Empleado</th>
+                    <th>Id Hospital</th>
+                    <th>IdSala</th>
+                    <th>Apellido</th>
+                    <th>Funcion</th>
+                    <th>Turno</th>
+                    <th>Salario</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(empleado of plantilla; track empleado)
+                {
+                    <tr>
+                    <td>{{empleado.idEmpleado}}</td>
+                    <td>{{empleado.idHospital}}</td>
+                    <td>{{empleado.idSala}}</td>
+                    <td>{{empleado.apellido}}</td>
+                    <td>{{empleado.funcion}}</td>
+                    <td>{{empleado.turno}}</td>
+                    <td>{{empleado.salario}}</td>
+                </tr>
+                }
+            </tbody>
+    </table>
+    }
+</div>

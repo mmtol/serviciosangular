@@ -33,4 +33,38 @@ export class ServicePlantillas
    })
    return promise;
  }
+
+  getFunciones(): Promise<any> 
+ { 
+    let urlApi = environment.apiPlantilas; 
+    let request = "api/plantilla/funciones"; 
+    let promise = new Promise((resolve) => 
+   {
+      this._http.get(urlApi+request).subscribe(response =>
+      {
+         resolve(response);
+      })
+   })
+   return promise;
+ }
+
+ getPlantillaPorFunciones(funciones:Array<string>):Promise<any>
+ {
+   let urlApi= environment.apiPlantilas;
+   let datos="";
+   for (let funcion of funciones)
+   {
+      datos+="funcion="+funcion+"&";
+   }
+   datos = datos.substring(0, datos.length - 1);
+   let endPoint = "api/plantilla/plantillafunciones?"+datos;
+   let promise = new Promise((resolve) =>
+   {
+      this._http.get(urlApi+endPoint).subscribe(response =>
+      {
+         resolve(response);
+      })
+   })
+   return promise;
+ }
 } 

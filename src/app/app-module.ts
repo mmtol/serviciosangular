@@ -15,6 +15,7 @@ import { CochesComponent } from '../components/coches.component/coches.component
 import { PlantillasimpleComponent } from '../components/plantillasimple.component/plantillasimple.component';
 import { MenuComponent } from '../components/menu.component/menu.component';
 import { ServicePlantillas } from '../services/service.plantillas';
+import { PlantillamultipleComponent } from '../components/plantillamultiple.component/plantillamultiple.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ServicePlantillas } from '../services/service.plantillas';
     Personasapi,
     CochesComponent,
     PlantillasimpleComponent,
-    MenuComponent
+    MenuComponent,
+    PlantillamultipleComponent
   ],
   imports: [
     BrowserModule,
