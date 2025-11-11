@@ -1,7 +1,7 @@
 <div>
     <h1>Plantillas</h1>
     <form #plantillaform="ngForm">
-        <select name="id" #id (change)="sacarPlantilla()">
+        <select class="form-control" name="id" #id (change)="sacarPlantilla()">
             @for(plantilla of plantillas; track plantilla)
             {
                 <option>{{plantilla.idEmpleado}}</option>
@@ -11,7 +11,7 @@
     <hr/>
     @if(plantilla != null)
     {
-        <table border="5">
+        <table class="table table bordered">
             <thead>
                 <tr>
                     <th>Id Empleado</th>
